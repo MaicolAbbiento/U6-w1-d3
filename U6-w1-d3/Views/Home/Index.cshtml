@@ -1,0 +1,17 @@
+﻿﻿@using U6_w1_d3.Models
+@model List<Scarpa>
+@{
+    ViewBag.Title = "Index";
+}
+<form action="/" method="post">
+    @foreach (Scarpa item in Model)
+    {
+        if (item.Presente)
+        {
+            <p> @item.NomeArticolo </p>
+
+        }
+
+    }<input type="submit" value="Salva" class="btn btn-success" />
+</form>
+<a class="btn btn-primary" href="@Url.Action("ActionName", "ControllerName", new{ parameter = "value"})">Click here</a>
