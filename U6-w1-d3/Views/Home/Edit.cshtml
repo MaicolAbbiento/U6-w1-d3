@@ -40,29 +40,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Immagine, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Immagine, new { @class = "form-control", type = "file", @accept = "image/*" })
-                @Html.ValidationMessageFor(model => model.Immagine, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImmaginiAggiuntiva1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.ImmaginiAggiuntiva1, new { @class = "form-control", type = "file", @accept = "image/*" })
-                @Html.ValidationMessageFor(model => model.ImmaginiAggiuntiva1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImmaginiAggiuntiva2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.ImmaginiAggiuntiva2, new { @class = "form-control", type = "file", @accept = "image/*" })
-                @Html.ValidationMessageFor(model => model.ImmaginiAggiuntiva2, "", new { @class = "text-danger" })
-            </div>
-        </div>
         <a class="btn btn-danger" href="@Url.Action("eliminadaldatabase", "Home", new{ parameter = $"{Model.Id}"})"> elimina </a>
 
         <div class="form-group">
