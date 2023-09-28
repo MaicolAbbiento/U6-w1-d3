@@ -10,6 +10,7 @@
         {
             <img src="~/Content/FileUpload/@item.Immagine" width:"100px" />
             <p> @item.NomeArticolo </p>
+            <p> @item.Prezzo </p>
             @Html.ActionLink("dettagli", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
 
         }
