@@ -18,6 +18,9 @@ namespace U6_w1_d3
         {
             try
             {
+                if(scarpa.Immagine==null) { scarpa.Immagine = ""; }
+                if (scarpa.ImmaginiAggiuntiva1 == null) { scarpa.ImmaginiAggiuntiva1 = ""; }
+                if (scarpa.ImmaginiAggiuntiva2 == null) { scarpa.ImmaginiAggiuntiva2 = ""; }
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(
                 "INSERT INTO scarpe  VALUES (@NomeArticolo, @Prezzo, @Descrizione , @Immagine, @ImmaginiAggiuntiva1, @ImmaginiAggiuntiva2 )", conn);

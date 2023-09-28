@@ -11,10 +11,10 @@ namespace U6_w1_d3.Models
         public string NomeArticolo { get; set; }
         public decimal Prezzo { get; set; }
         public string Descrizione { get; set; }
-        public string Immagine { get; set; } = "a";
+        public string Immagine { get; set; }
 
-        public string ImmaginiAggiuntiva1 { get; set; } = "a";
-        public string ImmaginiAggiuntiva2 { get; set; } = "a";
+        public string ImmaginiAggiuntiva1 { get; set; }
+        public string ImmaginiAggiuntiva2 { get; set; }
         public bool Presente { get; set; } = true;
 
         public Scarpa(string nomeArticolo, decimal prezzo, string descrizione, string immagine, string immaginiAggiuntiva1, string immaginiAggiuntiva2)

@@ -70,12 +70,24 @@ namespace U6_w1_d3.Controllers
         public ActionResult cambiaStato(string parameter)
         {
             int ID = Convert.ToInt32(parameter);
+            if ((List<Scarpa>)Session["scarpapresente"] != null)
+            {
+                scarpa = (List<Scarpa>)Session["scarpapresente"];
+            }
+
             Scarpa scarpasel = scarpa.Find((a) => a.Id == ID);
             for (int i = 0; i <= scarpa.Count; i++)
             {
                 if (scarpasel.Id == scarpa[i].Id)
                 {
-                    scarpa[i].Presente = !scarpa[i].Presente;
+                    if (scarpa[i].Presente == true)
+                    {
+                        scarpa[i].Presente = false;
+                    }
+                    else
+                    {
+                        scarpa[i].Presente = true;
+                    }
                     break;
                 }
             };
