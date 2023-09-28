@@ -27,9 +27,8 @@ namespace U6_w1_d3.Models
             ImmaginiAggiuntiva2 = immaginiAggiuntiva2;
         }
 
-        public Scarpa(int id, string nomeArticolo, decimal prezzo, string descrizione, string immagine, string immaginiAggiuntiva1, string immaginiAggiuntiva2 , bool presente)
+        public Scarpa(int id, string nomeArticolo, decimal prezzo, string descrizione, string immagine, string immaginiAggiuntiva1, string immaginiAggiuntiva2)
         {
-            Presente = presente;
             Id = id;
             NomeArticolo = nomeArticolo;
             Prezzo = prezzo;
@@ -41,14 +40,13 @@ namespace U6_w1_d3.Models
 
         public Scarpa()
         { }
- 
+
         public Scarpa(string nomeArticolo, decimal prezzo, string descrizione)
         {
             NomeArticolo = nomeArticolo;
             Prezzo = prezzo;
             Descrizione = descrizione;
         }
-
 
         public static List<Scarpa> ScarpaList { get; set; } = new List<Scarpa>();
     }

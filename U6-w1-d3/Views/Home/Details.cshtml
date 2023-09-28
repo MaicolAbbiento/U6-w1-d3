@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+﻿@using U6_w1_d3.Models
+@model Scarpa
+<img src="~/Content/FileUpload/@Model.Immagine" width:"100px" />
+<p> @Model.NomeArticolo</p>
+<p> @Model.Descrizione</p>
+<img src="~/Content/FileUpload/@Model.ImmaginiAggiuntiva1" width:"100px" />
+<img src="~/Content/FileUpload/@Model.ImmaginiAggiuntiva2" width:"100px" />
+@Html.ActionLink("Modifica", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" })

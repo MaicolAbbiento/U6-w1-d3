@@ -8,10 +8,11 @@
     {
         if (item.Presente)
         {
+            <img src="~/Content/FileUpload/@item.Immagine" width:"100px" />
             <p> @item.NomeArticolo </p>
+            @Html.ActionLink("dettagli", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
 
         }
 
     }<input type="submit" value="Salva" class="btn btn-success" />
 </form>
-<a class="btn btn-primary" href="@Url.Action("ActionName", "ControllerName", new{ parameter = "value"})">Click here</a>

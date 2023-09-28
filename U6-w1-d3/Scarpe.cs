@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using U6_w1_d3.Models;
 
 namespace U6_w1_d3
@@ -57,7 +58,6 @@ namespace U6_w1_d3
                            sqlDataReader["immagine"].ToString(),
                            sqlDataReader["ImmaginiAggiuntiva1"].ToString(),
                            sqlDataReader["ImmaginiAggiuntiva2"].ToString()
-                           true
                         );
                     scarpe.Add(scarpa);
                 }
@@ -65,6 +65,38 @@ namespace U6_w1_d3
             }
             catch { return new List<Scarpa>(); }
             finally { conn.Close(); }
+        }
+
+        public static void delete(int id)
+        {
+            conn.Open();
+            string deleteQuery = "DELETE FROM scarpe WHERE IdScarpa = @IdScarpa ";
+            using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("IdScarpa ", id);
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
+        }
+
+        public static void elimica(Scarpa scarpa)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "UPDATE scarpe SET  NomeArticolo=@NomeArticolo, Prezzo=@Prezzo, Descrizione= @Descrizione ,Immagine=@Immagine, ImmaginiAggiuntiva1=@ImmaginiAggiuntiva1 , ImmaginiAggiuntiva2=@ImmaginiAggiuntiva2 where IdScarpa = @IdScarpa";
+            cmd.Parameters.AddWithValue("NomeArticolo", scarpa.NomeArticolo);
+            cmd.Parameters.AddWithValue("Prezzo", Convert.ToDecimal(scarpa.Prezzo));
+            cmd.Parameters.AddWithValue("Descrizione", scarpa.Descrizione);
+            cmd.Parameters.AddWithValue("Immagine", scarpa.Immagine);
+            cmd.Parameters.AddWithValue("ImmaginiAggiuntiva1", scarpa.ImmaginiAggiuntiva1);
+            cmd.Parameters.AddWithValue("ImmaginiAggiuntiva2", scarpa.ImmaginiAggiuntiva2);
+            cmd.Parameters.AddWithValue("IdScarpa", scarpa.Id);
+
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
         }
     }
 }

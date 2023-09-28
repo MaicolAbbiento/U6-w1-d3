@@ -1,0 +1,15 @@
+﻿﻿@using U6_w1_d3.Models
+@model List<Scarpa>
+@{
+    ViewBag.Title = "admin";
+}
+<form action="/" method="post">
+    @foreach (Scarpa item in Model)
+    {
+        <a class="btn btn-primary" href="@Url.Action("cambiaStato", "Home", new{ parameter = $"{item.Id}"})"> @item.Presente</a>
+        <a class="btn btn-danger" href="@Url.Action("eliminadaldatabase", "Home", new{ parameter = $"{item.Id}"})"> elimina </a>
+
+        <p> @item.NomeArticolo </p>
+
+    }<input type="submit" value="Salva" class="btn btn-success" />
+</form>
